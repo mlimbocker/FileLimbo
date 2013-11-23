@@ -14,6 +14,8 @@ var unregister = function() {
 function setWorkingDir(path)
 {
 	workingDir = path;
+	console.log("Working Directory set to " + workingDir);
+	
 }
 function getWorkingDir(path)
 {
@@ -24,7 +26,7 @@ function getWorkingDir(path)
 
 var newFile = function(path)
 {
-	dir.createFile(path);
+	workingDir.createFile(path);
 };
 
 var newDir = function(path, curr)
