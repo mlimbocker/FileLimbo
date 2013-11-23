@@ -1,0 +1,14 @@
+body {
+	font-size: 14px;
+}
+
+.font-lg{
+	font-size: 18px;
+}
+.strong{
+	font-weight: bold;
+}
+
+.pull-right{
+	float: right;
+}

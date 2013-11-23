@@ -114,7 +114,7 @@ var init = function () {
 //    			console.log("New directory created");
 //    			newFile('rando.txt');
 //    			console.log("new file created");
-            	listFiles('/images');
+            	listFiles('Phone/images');
 //                if ( $.mobile.urlHistory.activeIndex <= 0 ) {
 //                    // if first page, terminate app
 //                    unregister();
