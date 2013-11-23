@@ -8,3 +8,7 @@ body {
 .strong{
 	font-weight: bold;
 }
+
+.pull-right{
+	float: right;
+}
