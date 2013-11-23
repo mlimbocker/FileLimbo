@@ -1,7 +1,4 @@
 var backEventListener = null;
-var fileList = null;
-var workingDir = null;
-
 
 var unregister = function() {
     if ( backEventListener !== null ) {
@@ -10,17 +7,6 @@ var unregister = function() {
         window.tizen.application.getCurrentApplication().exit();
     }
 };
-
-function setWorkingDir(path)
-{
-	workingDir = path;
-}
-function getWorkingDir(path)
-{
-	return workingDir;
-}
-
-
 
 var newFile = function(path)
 {
@@ -40,7 +26,6 @@ function onsuccess(files)
 		console.log(i);
 		console.log("File " + i + ": " + files[i].name + "  Path: " + files[i].toURI());
 	}
-	fileList = files;
 	//TODO do something with the files
 }
 function onerror(error)
@@ -66,11 +51,11 @@ function onListError(error)
  * listFiles(dir)
  * This function returns all files in the specified directory
  */
-var listFiles = function()
+var listFiles = function(dir)
 {
 	console.log("listFiles");
 	try{
-	tizen.filesystem.resolve(workingDir, onListSuccess, onListError, 'r');
+	tizen.filesystem.resolve(dir, onListSuccess, onListError, 'r');
 	}
 	catch(ex)
 	{
@@ -122,9 +107,7 @@ var init = function () {
  * Return: boolean verifies whether file opened
  */
 var open = function(filename)
-{
-	//TODO insert code to handle opening of files.
-};
+{};
 
 /**
  * copy(src, dest)
@@ -184,8 +167,6 @@ var navPush = function(dir)
 
 var navPop = function()
 {};
-
-
 
 
 
