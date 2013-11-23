@@ -33,6 +33,7 @@
 
 <body>
     <!-- Start of first page: #one -->
+    
     <div data-role="page" id="one">
         <div data-role="header" data-position="fixed">
             <div class="ui-grid-c">
@@ -40,44 +41,41 @@
             		<button id="back-btn" data-role="button" data-style="circle" data-icon="arrow-l"></button>
             	</div>
             	<div class="ui-block-b">
-            		<button id="file-list" onclick="onClick" data-role="button">List Files</button>
+            		<button id="jeff-btn" onclick="jeffHandler" data-role="button">Jeff's button</button>
             	</div>
             	<div class="ui-block-c">
-            		<button id="menu-btn" data-role="button" data-style="circle" data-icon="arrow-d"></button>
+            		<a href="#menu-popup" id="menu-btn" class="pull-right" data-role="button" data-rel="popup" data-style="circle" data-icon="gear"></a>
             	</div>
             </div>
         </div><!-- /header -->
 
         <div data-role="content">
-            <h2>My Current Directory</h2>
-            <p>
-                This is a multi-page boilerplate template that you can copy to build
-                your first Tizen Web UI Framework page. This template contains multiple "page"
-                containers inside.
-            </p>
-            <p>
-                You link to internal pages by referring to the ID of the page you
-                want to show. For example, to <a href="#two">link</a> to the page
-                with an ID of "two", my link would have a
-                <code>href="#two"</code>
-                in the code.
-            </p>
-            <h3>Show internal pages:</h3>
-            <p><a href="#two" data-role="button">Show page "two"</a></p>
-            <p><a href="#search-popup"  data-role="button" data-position-to="window" data-rel="popup">Show page "popup" (as a dialog)</a></p>
-
-            <div id="search-popup" data-role="popup" data-style="center_title_1btn">
-                <div class="ui-popup-title">
-                    <h1>Popup title</h1>
-                </div>
-                <div class="ui-popup-text">Pop-up dialog box, a child window that blocks user interact to the parent windows</div>
-                <a href="#" data-inline="true" data-role="button" onclick="javascript:$('#popup').popup('close');">Close</a>
-            </div>
+            
         </div><!-- /content -->
 
         <div data-role="footer" data-position="fixed">
             <h4>Page Footer</h4>
         </div><!-- /footer -->
+        
+        <div id="menu-popup" data-role="popup">
+    	<ul data-role="listview">
+    		<li class="text">
+    			<a href="#">New Folder</a>
+    		</li>
+    		<li class="text">
+    			<a href="#">Search</a>
+    		</li>
+    		<li class="text">
+    			<a href="#">Sort</a>
+    		</li>
+    	</ul>
+    </div>
+    
+    <script id="folder-element">
+    	<div class="folder">
+    		<img class="folder-icon" src="./img/folder-icon.png" />
+    	</div>
+    </script>
     </div><!-- /page one -->
 
 
@@ -100,4 +98,11 @@
     </div><!-- /page two -->
 
 </body>
+
+<script>
+	$(document)
+	.on("click", "jeff-btn", function(){
+	
+	});
+</script>
 </html>
