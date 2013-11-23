@@ -4,7 +4,7 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>xxs/mYfr+1CcfWkedo9kUU3dUKFDy0fWU2lrx8/hWWQ=</DigestValue>
+<DigestValue>BZohpCulknHBzdI0hylNHz8H/WUMBS995TxOqStOp8s=</DigestValue>
 </Reference>
 <Reference URI="config.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -32,7 +32,7 @@
 </Reference>
 <Reference URI="js/main.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sEW+9wfsQnsaPb4o1ku/6oMCERJtt9FbJkSWNiIiHUs=</DigestValue>
+<DigestValue>ulPxLfh+wOUCrvMEDbxcEK4OD4Ti+W7bhqBJkVqWizk=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -43,9 +43,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Oe+sS6CRfM2ezVLxU2C8JKRV1ifSJGH4U7kZE0Rw2qMgZzBvZl3WJp0Y8XOqg6eYXVTrIVRyWjo7
-A4j4nAzuLtB6Y0G+5yZa8KBFm1Baxj8y7p1qxE1TTZQZ0RmOVS6uSLJWct0p9OWc6UE7Uj/4q+gE
-FUEpr3gfSuOapVGvJAw=
+QxdUX7PysY5+8nTDIxTW5XG3L5+mUpTd0FvvSJzcAAM5qsFwyaVrZihn/6ldhHF84a8M3vR8IfTh
+dTxdBUml2JGdZLF/5uE7fPYBwytHgKE4V49Sbl1FWXxWyo9xdnZntVuUI67c6APBnTLMhbL4rs92
+CG/7SDs4ReS6WgFP82s=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

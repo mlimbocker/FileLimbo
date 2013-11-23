@@ -13,9 +13,9 @@ var unregister = function() {
 
 var onSetWD = function(dir)
 {
-	console.log(dir);
+	console.log(dir.path);
 	workingDir = dir;
-	console.log("Working Directory set to " + workingDir.name);
+	console.log("Working Directory set to " + workingDir.path);
 }
 var onSetWDErr = function(error)
 {
@@ -87,7 +87,7 @@ var listFiles = function()
 {
 	console.log("listFiles");
 	try{
-	tizen.filesystem.resolve(workingDir, onListSuccess, onListError, 'r');
+		tizen.filesystem.resolve(workingDir.path, onListSuccess, onListError, 'r');
 	}
 	catch(ex)
 	{
@@ -101,7 +101,7 @@ var init = function () {
     if ( backEventListener !== null ) {
         return;
     }
-    
+    setWorkingDir('images');
     // TODO:: Do your initialization job
     console.log("init() called");
     
@@ -109,12 +109,12 @@ var init = function () {
         if ( e.keyName == "menu" ) {
             try {
 //            	console.log("Button click");
-//            	setWorkingDir('images');
+            	
 //    			newDir('newDir');	
 //    			console.log("New directory created");
 //    			newFile('rando.txt');
 //    			console.log("new file created");
-            	listFiles('Phone/images');
+            	listFiles();
 //                if ( $.mobile.urlHistory.activeIndex <= 0 ) {
 //                    // if first page, terminate app
 //                    unregister();

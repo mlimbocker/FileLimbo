@@ -28,7 +28,7 @@
 </Reference>
 <Reference URI="js/main.js">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>sEW+9wfsQnsaPb4o1ku/6oMCERJtt9FbJkSWNiIiHUs=</DigestValue>
+<DigestValue>ulPxLfh+wOUCrvMEDbxcEK4OD4Ti+W7bhqBJkVqWizk=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -39,9 +39,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-EROuaxbKhAktRSxYBCpmIjW63ccsKECJziO0idP/1galgz14RdEGSsXexiG7mREHmlMe05iGECQT
-BCd1uXybSbgIFuHlXe2hQTbncAm0lwMDM/9JmRCVfG8ARQCWizoKzRdHWmOMfgInY8Xz/7Hsy6R1
-xJSoelU3+/rf95e7Vf0=
+B5f657+nkRs8M841mBddopdPIzjeSL2tD23laHhBD09ndY4jBNO+CXaf1fgQGTFM4si0vM+c8GQe
+OA9iaYDxiEjOiKp2K2Yk2X08imxtbCt7hMfXOBVPjul30oa8ER+DoUIvd3YF2RncsiF0hGJm9TAY
+JkydkRZLUwQEdw3Q3S4=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
