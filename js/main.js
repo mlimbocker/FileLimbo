@@ -1,12 +1,12 @@
-var backEventListener = null;
+var menuEventListener = null;
 var fileList = null;
 var workingDir = null;
 
 
 var unregister = function() {
-    if ( backEventListener !== null ) {
-        document.removeEventListener( 'tizenhwkey', backEventListener );
-        backEventListener = null;
+    if ( menuEventListener !== null ) {
+        document.removeEventListener( 'tizenhwkey', menuEventListener );
+        menuEventListener = null;
         window.tizen.application.getCurrentApplication().exit();
     }
 };
@@ -41,13 +41,28 @@ var getWorkingDir = function(path)
 
 var newFile = function(path)
 {
-	workingDir.createFile(path);
+	try
+	{
+		workingDir.createFile(path);
+		console.log("New file created");
+	}
+	catch(ex)
+	{
+		console.log(ex);
+	}
 };
 
 var newDir = function(path)
 {
-	//TODO check to see if path already exists
-	workingDir.createDirectory(path);
+	try
+	{
+		workingDir.createDirectory(path);
+		console.log("New Directory Created");
+	}
+	catch(ex)
+	{
+		console.log(ex);
+	}
 };
 var genList = function(files)
 {
@@ -57,14 +72,13 @@ var genList = function(files)
 		console.log("File " + i + ": " + files[i].name + "  Path: " + files[i].toURI());
 	}
 	fileList = files;
-	//TODO do something with the files
+	
 }
 var genListErr = function(error)
 {
-	console.log(error.message);
 	console.log(error);
-	console.log("BAD STUFF");
-	//TODO print the error message
+	console.log("MORE BAD STUFF");
+	
 }
 var onListSuccess = function(dir)
 {
@@ -75,8 +89,8 @@ var onListSuccess = function(dir)
 }
 var onListError = function(error)
 {
-	console.log("BAD STUFF");
 	console.log(error);
+	console.log("BAD STUFF");
 }
 /**
  * listFiles(dir)
@@ -86,7 +100,7 @@ var listFiles = function()
 {
 	console.log("listFiles");
 	try{
-		tizen.filesystem.resolve(workingDir.path, onListSuccess, onListError, 'r');
+		tizen.filesystem.resolve(workingDir.path, onListSuccess, onListError, 'rw');
 	}
 	catch(ex)
 	{
@@ -97,22 +111,20 @@ var listFiles = function()
 //Initialize function
 var init = function () {
     // register once
-    if ( backEventListener !== null ) {
+    if ( menuEventListener !== null ) {
         return;
     }
     setWorkingDir('images');
     // TODO:: Do your initialization job
     console.log("init() called");
     
-    var backEvent = function(e) {
+    var menuEvent = function(e) {
         if ( e.keyName == "menu" ) {
             try {
-//            	console.log("Button click");
+
             	listFiles();
     			newDir('newDir');	
-    			console.log("New directory created");
     			newFile('rando.txt');
-    			console.log("new file created");
             	listFiles();
 //                if ( $.mobile.urlHistory.activeIndex <= 0 ) {
 //                    // if first page, terminate app
@@ -131,8 +143,8 @@ var init = function () {
     };
     
     // add eventListener for tizenhwkey (Back Button)
-    document.addEventListener( 'tizenhwkey', backEvent );
-    backEventListener = backEvent;
+    document.addEventListener( 'tizenhwkey', menuEvent );
+    menuEventListener = menuEvent;
 };
 
 
