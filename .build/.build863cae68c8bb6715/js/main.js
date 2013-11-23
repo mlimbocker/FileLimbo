@@ -49,18 +49,17 @@ var newDir = function(path)
 	//TODO check to see if path already exists
 	workingDir.createDirectory(path);
 };
-var onsuccess = function(files)
+var genList = function(files)
 {
 	console.log(files.length);
 	for(i = 0; i < files.length; i++)
 	{
-		console.log(i);
 		console.log("File " + i + ": " + files[i].name + "  Path: " + files[i].toURI());
 	}
 	fileList = files;
 	//TODO do something with the files
 }
-var onerror = function(error)
+var genListErr = function(error)
 {
 	console.log(error.message);
 	console.log(error);
@@ -71,7 +70,7 @@ var onListSuccess = function(dir)
 {
 	
 	console.log("List Success");
-	dir.listFiles(onsuccess, onerror);
+	dir.listFiles(genList, genListErr);
 	
 }
 var onListError = function(error)
@@ -109,11 +108,11 @@ var init = function () {
         if ( e.keyName == "menu" ) {
             try {
 //            	console.log("Button click");
-            	
-//    			newDir('newDir');	
-//    			console.log("New directory created");
-//    			newFile('rando.txt');
-//    			console.log("new file created");
+            	listFiles();
+    			newDir('newDir');	
+    			console.log("New directory created");
+    			newFile('rando.txt');
+    			console.log("new file created");
             	listFiles();
 //                if ( $.mobile.urlHistory.activeIndex <= 0 ) {
 //                    // if first page, terminate app
