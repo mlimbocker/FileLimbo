@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/FileLimbo" version="1.0.0" viewmodes="maximized">
-    <tizen:application id="cSQHdXEY9J.FileLimbo" package="cSQHdXEY9J" required_version="2.2"/>
-    <content src="index.html"/>
+<widget xmlns="http://www.w3.org/ns/widgets" xmlns:tizen="http://tizen.org/ns/widgets" id="http://yourdomain/FileLimbo" version="0.2.1" viewmodes="maximized">
+    <tizen:application id="mxZC2E7BZE.FileLimbo" package="mxZC2E7BZE" required_version="2.2"/>
+    <content src="app.html"/>
     <feature name="http://tizen.org/feature/screen.size.all"/>
     <icon src="icon.png"/>
     <name>FileLimbo</name>
+    <tizen:privilege name="http://tizen.org/privilege/application.launch"/>  
+	 
+	 
+	 
+	 
+	 
 </widget>
